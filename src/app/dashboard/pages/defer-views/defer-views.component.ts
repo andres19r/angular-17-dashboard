@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './defer-views.component.html',
-  styleUrl: './defer-views.component.scss'
+  styleUrl: './defer-views.component.scss',
 })
-export class DeferViewsComponent {
-
-}
+export default class DeferViewsComponent {}
