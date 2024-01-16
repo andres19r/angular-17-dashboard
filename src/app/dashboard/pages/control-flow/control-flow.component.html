@@ -1,4 +1,5 @@
 <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+  <!-- @if -->
   <div class="bg-white rounded shadow p-10">
     <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
     <button
@@ -12,5 +13,39 @@
     } @else {
       <p>*********</p>
     }
+  </div>
+
+  <!-- @switch -->
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl">{{ grade() }}</h2>
+    @switch (grade()) {
+      @case ("A") {
+        <p>Up to 90</p>
+      }
+      @case ("B") {
+        <p>Up to 80</p>
+      }
+      @default {
+        <p>Reprobate</p>
+      }
+    }
+    <button
+      class="p-2 mr-2 bg-blue-500 rounded text-white"
+      (click)="changeGrade('A')"
+    >
+      A
+    </button>
+    <button
+      class="p-2 mr-2 bg-blue-500 rounded text-white"
+      (click)="changeGrade('B')"
+    >
+      B
+    </button>
+    <button
+      class="p-2 mr-2 bg-blue-500 rounded text-white"
+      (click)="changeGrade('F')"
+    >
+      F
+    </button>
   </div>
 </section>
